@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
                             type="text"
                             placeholder="What do you want to watch?"
                             _placeholder={{ color: 'white' }}
-                            variant="filled"
+                           
                             border={'1px solid white'}
 
                         />
@@ -53,7 +53,7 @@ const Navbar: React.FC = () => {
                 </Flex>
 
                 <Flex align="center" gap={'6'}>
-                    <Text>Sign In</Text>
+                    <Text color={'white'} >Sign In</Text>
                     <Image src={Menu} alt="Menu" />
                 </Flex>
 
