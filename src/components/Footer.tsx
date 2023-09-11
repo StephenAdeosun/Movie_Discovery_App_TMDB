@@ -15,7 +15,7 @@ import {Twitter, Facebook, Instagram,Youtube} from 'react-feather';
     <Youtube color="black" />
 </Flex>
 
-<Flex justifyContent={'center'} my={'4'} bgColor={'white'} gap={10}>
+<Flex justifyContent={'center'} my={'4'} flexDirection={{base:'column', md:'row'}} bgColor={'white'} gap={10}>
 <Text textColor={'black'} fontWeight={'lg'}>Conditions of use</Text>
 <Text color={'black'} fontWeight={'lg'}>Privacy & Policy</Text>
 <Text color={'black'} fontWeight={'lg'}>Press room</Text>

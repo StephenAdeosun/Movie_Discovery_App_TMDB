@@ -65,12 +65,12 @@ const Navbar: React.FC = () => {
                 <Text color={'white'} fontSize={{base:'4xl', md:'5xl'}} fontWeight={'bold'}>John Wick 3 : Parabellum</Text>
                 <Flex gap={{base:'1', md:'4'}} maxWidth={{base:'400px', md:'500px'}}  mt={'4'} mx={{base:'auto', md:'0'}} textAlign={{base:'center', md:'left'}}>
                     <Image src={IMDB} alt="Logo" />
-                    <Text  >86.0 / 100</Text>
+                    <Text color={'white'}  >86.0 / 100</Text>
                     <Image src={Orange} alt="Logo" w={'auto'} h={'auto'} />
-                    <Text  >97%</Text>
+                    <Text color={'white'}  >97%</Text>
                 </Flex>
-                <Text my={'4'} maxWidth={{base:'600px', md:'330px'}} mx={{base:'auto', md:'0'}} textAlign={{base:'center', md:'left'}}>John Wick is on the run after killing a member of the international assassins' guild, and with a $14 million price tag on his head, he is the target of hit men and women everywhere.</Text>
-               <Button leftIcon={<PlayIcon />} backgroundColor={'#BE123C'} >Watch Trailer</Button>
+                <Text my={'4'} maxWidth={{base:'600px', md:'330px'}} mx={{base:'auto', md:'0'}} color={'white'}  textAlign={{base:'center', md:'left'}}>John Wick is on the run after killing a member of the international assassins' guild, and with a $14 million price tag on his head, he is the target of hit men and women everywhere.</Text>
+               <Button leftIcon={<PlayIcon />} backgroundColor={'#BE123C'} color={'white'} >Watch Trailer</Button>
             </Box>
 
             <Image src={Pagination} alt="Logo" display={{base:'none', md:'block'}} h={'100px'}/>
