@@ -3,7 +3,7 @@ import React from 'react';
 import { Image, Box, Text, Flex, Input, InputGroup, InputRightElement, Button, Stack, Link, useColorModeValue, Grid, GridItem, IconButton } from '@chakra-ui/react';
 import { Search as SearchIcon } from 'react-feather';
 import { PlayCircle as PlayIcon } from 'react-feather';
-
+import Footer from '../components/Footer';
 
 import Logo from '.././assets/images/Logo.png';
 import Menu from '.././assets/images/Menu.png';
@@ -15,6 +15,7 @@ import Pagination from '../assets/images/Pagination Box.png';
 
 const Navbar: React.FC = () => {
     return (
+        <Box>
         <Box bgColor={'black'}
             // h={'100vh'}
             px={{base:'1',md:'20'}}
@@ -76,8 +77,11 @@ const Navbar: React.FC = () => {
             
             </Flex>
        
-       
+      
         </Box>
+  <Footer />
+  </Box>
+       
     );
 };
 
