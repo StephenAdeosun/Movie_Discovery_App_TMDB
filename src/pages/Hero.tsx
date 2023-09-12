@@ -4,7 +4,7 @@ import { Image, Box, Text, Flex,Center, Input, InputGroup, InputRightElement, Bu
 import { Search as SearchIcon } from 'react-feather';
 import { PlayCircle as PlayIcon } from 'react-feather';
 import Footer from '../components/Footer';
-
+import Top10Movies from '../components/Top10Movies';
 import Logo from '.././assets/images/Logo.png';
 import Menu from '.././assets/images/Menu.png';
 import Poster from '.././assets/images/Poster.png';
@@ -84,7 +84,9 @@ const Navbar: React.FC = () => {
        
       
         </Box>
+        <Top10Movies />
   <Footer />
+
   </Box>
        
     );
