@@ -3,7 +3,7 @@ import { Box, Grid,Flex,Text,Heading } from '@chakra-ui/react';
 import {ArrowRight} from 'react-feather';
 import { fetchTop10PopularMovies } from '../services/api';
 import MovieCard from './MovieCard';
-
+import MovieSearch from './MovieSearch';
 
 interface Movie {
   id: number;
@@ -15,6 +15,7 @@ interface Movie {
 
 const Top10Movies: React.FC = () => {
   const [top10PopularMovies, setTop10PopularMovies] = useState<Movie[]>([]);
+  const [searchResults, setSearchResults] = useState<Movie[]>([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -27,9 +28,13 @@ const Top10Movies: React.FC = () => {
 
     fetchData();
   }, []);
+  const handleSearchResults = (movies: Movie[]) => {
+    setSearchResults(movies);
+  };
 console.log(top10PopularMovies)
   return (
     <Box backgroundColor={'white'} px={{base:'14',sm:'10',lg:'20'}} py={12}>
+      <MovieSearch onSearchResults={handleSearchResults} />
     <Flex justifyContent={'space-between'} alignItems={'center'} >
     <Text color='black' fontSize={'4xl'} fontWeight={'50pxg'}>Popular Movies</Text>
   <Flex alignItems={'center'}>
@@ -37,13 +42,32 @@ console.log(top10PopularMovies)
     <ArrowRight color={'#BE123C'} />
     </Flex>
     </Flex>
-    <Grid templateColumns={{base:'1fr', sm:'repeat(2,1fr)', md:'repeat(4,1fr)'}} gap={4} cursor={'pointer'} >
+    {/* <Grid templateColumns={{base:'1fr', sm:'repeat(2,1fr)', md:'repeat(4,1fr)'}} gap={4} cursor={'pointer'} >
       {top10PopularMovies.map((movie) => (
         <Box key={movie.id}>
           <MovieCard movie={movie} />
         </Box>
       ))}
-    </Grid>
+    </Grid> */}
+
+    
+<Grid
+        templateColumns={{ base: '1fr', sm: 'repeat(2, 1fr)', md: 'repeat(4, 1fr)' }}
+        gap={4}
+        cursor={'pointer'}
+      >
+        {searchResults.length > 0
+          ? searchResults.map((movie) => (
+              <Box key={movie.id}>
+                <MovieCard movie={movie} />
+              </Box>
+            ))
+          : top10PopularMovies.map((movie) => (
+              <Box key={movie.id}>
+                <MovieCard movie={movie} />
+              </Box>
+            ))}
+      </Grid>
     </Box>
     
     

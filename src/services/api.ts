@@ -12,8 +12,7 @@ export const fetchTop10PopularMovies = async () => {
       params: {
         api_key: API_KEY,
         language: 'en-US',
-
-        page: 1, 
+        page: 2, 
         per_page: 10,
       },
     });
@@ -25,7 +24,7 @@ export const fetchTop10PopularMovies = async () => {
 };
 
 // Function to search for movies by title
-export const searchMoviesByTitle = async (query: string) => {
+export const fetchMoviesByTitle  = async (query: string) => {
   try {
     const response = await axios.get(`${BASE_URL}/search/movie`, {
       params: {
