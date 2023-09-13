@@ -33,25 +33,16 @@ const Top10Movies: React.FC = () => {
   };
 console.log(top10PopularMovies)
   return (
-    <Box backgroundColor={'white'} px={{base:'14',sm:'10',lg:'20'}} py={12}>
+    <Box backgroundColor={'white'} px={{base:'6',sm:'10',lg:'20'}} py={12}>
       <MovieSearch onSearchResults={handleSearchResults} />
-    <Flex justifyContent={'space-between'} alignItems={'center'} >
-    <Text color='black' fontSize={'4xl'} fontWeight={'50pxg'}>Popular Movies</Text>
+    <Flex justifyContent={'space-between'}mt='10' alignItems={'center'} >
+    <Text color='black'  fontSize={{base:'md', md:'4xl'}} fontWeight={'50pxg'}>Popular Movies</Text>
   <Flex alignItems={'center'}>
-      <Text color='#BE123C' fontSize={'xl'}>See more</Text>
+      <Text color='#BE123C'  fontSize={{base:'sm', md:'xl'}} >See more</Text>
     <ArrowRight color={'#BE123C'} />
     </Flex>
     </Flex>
-    {/* <Grid templateColumns={{base:'1fr', sm:'repeat(2,1fr)', md:'repeat(4,1fr)'}} gap={4} cursor={'pointer'} >
-      {top10PopularMovies.map((movie) => (
-        <Box key={movie.id}>
-          <MovieCard movie={movie} />
-        </Box>
-      ))}
-    </Grid> */}
-
-    
-<Grid
+    <Grid
         templateColumns={{ base: '1fr', sm: 'repeat(2, 1fr)', md: 'repeat(4, 1fr)' }}
         gap={4}
         cursor={'pointer'}

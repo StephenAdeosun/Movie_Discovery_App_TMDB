@@ -8,11 +8,11 @@ const BASE_URL = 'https://api.themoviedb.org/3';
 // Function to fetch top 10 movies
 export const fetchTop10PopularMovies = async () => {
   try {
-    const response = await axios.get(`${BASE_URL}/movie/popular`, {
+    const response = await axios.get(`${BASE_URL}/movie/top_rated`, {
       params: {
         api_key: API_KEY,
         language: 'en-US',
-        page: 2, 
+        page: 1, 
         per_page: 10,
       },
     });

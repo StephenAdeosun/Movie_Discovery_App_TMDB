@@ -18,17 +18,17 @@ const Navbar: React.FC = () => {
         <Box>
         <Box bgColor={'black'}
             // h={'100vh'}
-            px={{base:'1',md:'20'}}
+            px={{base:'2',md:'20'}}
             pb={{base:'20', md:'20'}}
             backgroundImage={`url(${Poster})`}
             backgroundSize={'cover'}
             backgroundPosition={'center center'}
             backgroundRepeat={'no-repeat'}
         >
-            <Flex as="nav" justify="space-between" flexDirection={{base:'column', md:'row'}} align="center" gap={{base:'4', md:"0"}} p={4}>
+            <Flex as="nav" justify="space-between" flexDirection={{ md:'row'}}  align="center" gap={{base:'2', md:"0"}} p={4}>
                 <div>
                     <Image src={Logo} alt="Logo" />
-                </div> {/* Replace with your app's logo */}
+                </div> 
                 <Flex as="form"  w={{base:'200px', md:'500px'}} align="center">
                     <InputGroup w={'100%'}>
                         <Input
@@ -52,20 +52,20 @@ const Navbar: React.FC = () => {
                     </InputGroup>
                 </Flex>
 
-                <Flex align="center" gap={'6'}>
-                    <Text color={'white'} >Sign In</Text>
-                    <Image src={Menu} alt="Menu" />
+                <Flex align="center" gap={'4'}>
+                    <Text color={'white'} fontSize={{base:'sm',md:'md'}} display={{base:'none', md:'block'}} >SignIn</Text>
+                    <Image src={Menu} alt="Menu" w='100%' />
                 </Flex>
 
             </Flex>
 
 
-            <Flex justifyContent={'space-between'} alignItems={'center'} mx={{base:'auto', md:'0'}} mt={{base:'4' , md:'20'}} textAlign={{base:'center', md:'left'}}>
+            <Flex justifyContent={'space-between'} alignItems={'center'} mx={{base:'auto', md:'0'}} mt={{base:'4' , md:'20'}} textAlign={{md:'left'}}>
             <Box maxWidth={{base:'550px', md:'500px'}} margin={{base:'auto', md:'0'}} >
                 <Text color={'white'} fontSize={{base:'4xl', md:'5xl'}} fontWeight={'bold'}>John Wick 3 : Parabellum</Text>
                 <Box  m={{base:'auto'}}>
                     {/* <Center>                 */}
-                        <Flex gap={{base:'1', md:'4'}} maxWidth={'220px'} justifyContent={{base:'center', md:'space-between'}}  mt={'4'} mx={{base:'auto', md:'0'}} textAlign={{base:'center', md:'left'}}>
+                        <Flex gap={{base:'1', md:'4'}} maxWidth={'220px'} justifyContent={{ md:'space-between'}}  mt={'4'} mx={{ md:'0'}} textAlign={{ md:'left'}}>
                     <Image src={IMDB} alt="Logo" />
                     <Text color={'white'}  >86.0 / 100</Text>
                     <Image src={Orange} alt="Logo" w={'auto'} h={'auto'} />
@@ -74,11 +74,11 @@ const Navbar: React.FC = () => {
                 {/* </Center> */}
 
                 </Box>
-                <Text my={'4'} maxWidth={{base:'600px', md:'330px'}} mx={{base:'auto', md:'0'}} color={'white'}  textAlign={{base:'center', md:'left'}}>John Wick is on the run after killing a member of the international assassins' guild, and with a $14 million price tag on his head, he is the target of hit men and women everywhere.</Text>
+                <Text my={'4'} maxWidth={{base:'600px', md:'330px'}}fontSize={{base:'sm', sm:'md'}} mx={{base:'auto', md:'0'}} color={'white'}  textAlign={{ md:'left'}}>John Wick is on the run after killing a member of the international assassins' guild, and with a $14 million price tag on his head, he is the target of hit men and women everywhere.</Text>
                <Button leftIcon={<PlayIcon />} backgroundColor={'#BE123C'} color={'white'} >Watch Trailer</Button>
             </Box>
 
-            <Image src={Pagination} alt="Logo" display={{base:'none', md:'block'}} h={'100px'}/>
+            <Image src={Pagination} alt="Logo" display={{ md:'block'}} h={'100px'}/>
             
             </Flex>
        

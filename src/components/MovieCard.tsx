@@ -47,7 +47,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
   return (
     <Box>
       {showAlert && (
-        <Alert status={isFavorite ? 'success' : 'error'} bg={isFavorite ?  "green.600" : "red.400"} zIndex='10'  position="fixed" margin='auto' top={0} left={'0'}>
+        <Alert status={isFavorite ? 'success' : 'error'} bg={isFavorite ?  "green.600" : "red.400"} zIndex='10' color={'white'} position="fixed" margin='auto' top={0} left={'0'}>
           <AlertIcon />
           {alertMessage}
         </Alert>
@@ -59,25 +59,18 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
       boxShadow="lg"
       flexDirection="column" // Set flex direction to column
       p={4}
+      data-testid="movie-card"
       _hover={{ boxShadow: 'xl' }} // Add hover effect
     >
-      <Image src={imageUrl} alt={title} flexGrow={1} w='100%' /> {/* Set flexGrow to 1 */}
-      <Flex 
-      position={'absolute'}
-      backgroundColor='#F3F4F6'
-      borderRadius={'50%'}
-      p={1}
-      className="heart-icon"
-      onClick={toggleFavorite}
-      // top={2}
-    // left={2}
+      <Image src={imageUrl} alt={title}  flexGrow={1} w='100%'  data-testid="movie-poster"/> {/* Set flexGrow to 1 */}
+      <Flex  position={'absolute'}backgroundColor='#F3F4F6' borderRadius={'50%'} p={1} className="heart-icon" onClick={toggleFavorite} marginLeft='2' mt='2'
       >
         <Heart color={isFavorite ? 'black' : 'grey'}  size={20}/>
       </Flex>
-      <Text fontWeight="bold" fontSize="xl" mt={2} color={'black'}>
+      <Text fontWeight="bold" fontSize="xl" mt={2} color={'black'} data-testid="movie-title">
         {title}
       </Text>
-      <Text fontSize="sm" color="gray.500">
+      <Text fontSize="sm" color="gray.500" data-testid="movie-release-date">
         Release Date: {release_date}
       </Text>
      
