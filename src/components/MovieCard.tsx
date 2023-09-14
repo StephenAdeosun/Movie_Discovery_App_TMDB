@@ -5,16 +5,18 @@ import { useState } from 'react';
 import { Alert, AlertIcon, Box, Image,Flex, Text } from '@chakra-ui/react';
 import { Heart } from 'react-feather';
 import '../styles/MovieCard.css'
+import { Link } from 'react-router-dom';
 interface MovieCardProps {
   movie: {
     title: string;
     poster_path: string;
     release_date: string;
+    id: number;
   };
 }
 
 const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
-  const { title, poster_path, release_date } = movie;
+  const {id, title, poster_path, release_date } = movie;
   const imageUrl = `https://image.tmdb.org/t/p/w500${poster_path}`;
   const [isFavorite, setIsFavorite] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
@@ -24,11 +26,11 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
     if (isFavorite) {
       // Remove the movie from favorites
       setIsFavorite(false);
-      showAlertMessage('Removed from favorites');
+      showAlertMessage(`${title} removed from favorites`);
     } else {
       // Add the movie to favorites
       setIsFavorite(true);
-      showAlertMessage('Added to favorites');
+      showAlertMessage(`${title} added to favorites`);
     }
   };
 
@@ -40,7 +42,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
     setTimeout(() => {
       setAlertMessage(''); // Clear the alert message when hiding the alert
       setShowAlert(false);
-    }, 2000); // 3 seconds
+    }, 2000); // 2 seconds
   };
 
 
@@ -52,6 +54,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
           {alertMessage}
         </Alert>
       )}
+      
     <Flex
       borderWidth="1px"
       borderRadius="lg"
@@ -59,21 +62,24 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
       boxShadow="lg"
       flexDirection="column" // Set flex direction to column
       p={4}
-      data-testid="movie-card"
+      data-testid="movie-card "
       _hover={{ boxShadow: 'xl' }} // Add hover effect
-    >
-      <Image src={imageUrl} alt={title}  flexGrow={1} w='100%'  data-testid="movie-poster"/> {/* Set flexGrow to 1 */}
+    >  
+    <Link to={`/movies/${id}`}>
+      <Image src={imageUrl} alt={title}  flexGrow={1} w='100%'  data-testid="movie-poster"/> 
+      </Link>
       <Flex  position={'absolute'}backgroundColor='#F3F4F6' borderRadius={'50%'} p={1} className="heart-icon" onClick={toggleFavorite} marginLeft='2' mt='2'
       >
-        <Heart color={isFavorite ? 'black' : 'grey'}  size={20}/>
+        <Heart color={isFavorite ? 'red' : 'black'}  size={20}/>
       </Flex>
+      <Link to={`/movies/${id}`}>
       <Text fontWeight="bold" fontSize="xl" mt={2} color={'black'} data-testid="movie-title">
         {title}
       </Text>
-      <Text fontSize="sm" color="gray.500" data-testid="movie-release-date">
-        Release Date: {release_date}
+      <Text fontSize="sm" color="gray.500" >
+        Release Date: <Text fontSize="sm" color="gray.500" data-testid="movie-release-date">{release_date}</Text>
       </Text>
-     
+     </Link>
     </Flex> 
       </Box>
   );

@@ -2,7 +2,7 @@
 
 import axios from 'axios';
 
-const API_KEY = "b96a9462ad6fa1c23da0a157fd1adc44" // Replace with your actual API key
+const API_KEY = "b96a9462ad6fa1c23da0a157fd1adc44" 
 const BASE_URL = 'https://api.themoviedb.org/3';
 
 // Function to fetch top 10 movies
@@ -31,7 +31,7 @@ export const fetchMoviesByTitle  = async (query: string) => {
         api_key: API_KEY,
         language: 'en-US',
         query,
-        page: 1, // You might need pagination for more results
+        page: 1, 
       },
     });
     return response.data.results;

@@ -17,7 +17,6 @@ const Navbar: React.FC = () => {
     return (
         <Box>
         <Box bgColor={'black'}
-            // h={'100vh'}
             px={{base:'2',md:'20'}}
             pb={{base:'20', md:'20'}}
             backgroundImage={`url(${Poster})`}
@@ -44,10 +43,7 @@ const Navbar: React.FC = () => {
                             color='white'
                             bg={'transparent'}
                             children={<SearchIcon color="white" style={{ background: 'transparent', boxShadow: 'none' }} />} // Replace with your chosen icon
-                            onClick={() => {
-                                // Implement your search functionality here
-                                // This function will be called when the icon is clicked
-                            }}
+                        
                         />
                     </InputGroup>
                 </Flex>
@@ -64,14 +60,12 @@ const Navbar: React.FC = () => {
             <Box maxWidth={{base:'550px', md:'500px'}} margin={{base:'auto', md:'0'}} >
                 <Text color={'white'} fontSize={{base:'4xl', md:'5xl'}} fontWeight={'bold'}>John Wick 3 : Parabellum</Text>
                 <Box  m={{base:'auto'}}>
-                    {/* <Center>                 */}
                         <Flex gap={{base:'1', md:'4'}} maxWidth={'220px'} justifyContent={{ md:'space-between'}}  mt={'4'} mx={{ md:'0'}} textAlign={{ md:'left'}}>
                     <Image src={IMDB} alt="Logo" />
                     <Text color={'white'}  >86.0 / 100</Text>
                     <Image src={Orange} alt="Logo" w={'auto'} h={'auto'} />
                     <Text color={'white'}  >97%</Text>
                 </Flex>
-                {/* </Center> */}
 
                 </Box>
                 <Text my={'4'} maxWidth={{base:'600px', md:'330px'}}fontSize={{base:'sm', sm:'md'}} mx={{base:'auto', md:'0'}} color={'white'}  textAlign={{ md:'left'}}>John Wick is on the run after killing a member of the international assassins' guild, and with a $14 million price tag on his head, he is the target of hit men and women everywhere.</Text>

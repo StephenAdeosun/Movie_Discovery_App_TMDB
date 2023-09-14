@@ -10,7 +10,6 @@ interface Movie {
   title: string;
   poster_path: string;
   release_date: string;
-  // Add other properties as needed
 }
 
 const Top10Movies: React.FC = () => {

@@ -22,7 +22,7 @@ const MovieDetails: React.FC = () => {
   useEffect(() => {
     // Fetch movie details from TMDB API using the provided IMDb ID (id)
     const API_KEY = "b96a9462ad6fa1c23da0a157fd1adc44"
-    // Example URL for fetching movie details by IMDb ID
+
     const apiUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`;
 
     fetch(apiUrl)

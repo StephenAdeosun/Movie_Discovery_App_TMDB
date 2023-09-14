@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Input, Button, Flex, Spinner, Text, Grid } from '@chakra-ui/react';
-import { FiSearch } from 'react-icons/fi'; // Import the search icon from react-icons
-import { fetchMoviesByTitle } from '../services/api'; // Import your API function for searching movies
+import { FiSearch } from 'react-icons/fi'; 
+import { fetchMoviesByTitle } from '../services/api'; 
 import MovieCard from './MovieCard';
 
 interface MovieSearchProps {
@@ -43,7 +43,7 @@ const MovieSearch: React.FC<MovieSearchProps> = ({ onSearchResults }) => {
   // Function to trigger the search
   const handleSearch = () => {
     if (searchQuery.trim() === '') {
-      // Handle empty search query here if needed
+      
       setError('Please enter a search query.');
       setSearchResults([]);
       onSearchResults([]);
