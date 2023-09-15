@@ -4,17 +4,17 @@ To run this project locally, follow these steps:
 
 1. **Clone the repository**:
 
-   ```bash
-   git clone https://github.com/your-username/your-project.git
+ 
+  ### git clone https://github.com/your-username/your-project.git
    
 2 **Navigate to the folder**
-  ```bash
-cd your-project
+
+### cd your-project
 
 
 3 **Install the dependencies**
-  ```bash
-npm install
+
+### npm install
 
 ## Configuration
 
@@ -29,8 +29,8 @@ TMDB_API_KEY=your-api-key-here
 
 To start the development server, run the following command:
 
-```bash
-npm start
+
+ ### npm start
 This will run the application in development mode. Open http://localhost:3000 in your web browser to access the app.
 
 ## License
